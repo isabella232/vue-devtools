@@ -42,6 +42,7 @@ export function inlineDevtools(el, iframe) {
   targetWindow.eval(source)
 
   initDevTools({
+    el: '#app',
     connect (cb) {
       // 3. called by devtools: inject backend
       inject('./build/backend.js', () => {

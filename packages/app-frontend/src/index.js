@@ -69,6 +69,7 @@ let app = new Vue({
  * @param {Object} shell
  *        - connect(bridge => {})
  *        - onReload(reloadFn)
+ *        - el // element to mount the devtools
  */
 
 export function initDevTools (shell) {
@@ -254,7 +255,7 @@ function initApp (shell) {
             immediate: true
           }
         }
-      }).$mount('#app')
+      }).$mount(shell.el)
     })
   })
 }
