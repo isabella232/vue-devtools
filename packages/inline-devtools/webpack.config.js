@@ -6,7 +6,6 @@ module.exports = createConfig({
     'inlineDevtools': './src/inline-devtools.js',
     'backend': './src/backend.js'
   },
-  // entry: './src/tester.js',
   output: {
     path: path.join(__dirname, 'build'),
     filename: '[name].js',
