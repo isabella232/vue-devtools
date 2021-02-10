@@ -58,9 +58,10 @@ Vue.options.renderError = (h, e) => {
   }, e.stack)
 }
 
-let app = new Vue({
-  render: (h) => h(AppConnecting)
-}).$mount('#app')
+let app
+//  = new Vue({
+//   render: (h) => h(AppConnecting)
+// }).$mount('#app')
 
 /**
  * Create the main devtools app. Expects to be called with a shell interface
@@ -77,8 +78,8 @@ export function initDevTools (shell) {
     initApp(shell)
     shell.onReload(() => {
       if (app) {
-        app.$el.classList.add('disconnected')
-        app.$destroy()
+        // app.$el.classList.add('disconnected')
+        // app.$destroy()
       }
       bridge.removeAllListeners()
       initApp(shell)
@@ -225,9 +226,9 @@ function initApp (shell) {
 
       initEnv(Vue)
 
-      if (app) {
-        app.$destroy()
-      }
+      // if (app) {
+      //   app.$destroy()
+      // }
 
       app = new Vue({
         extends: App,

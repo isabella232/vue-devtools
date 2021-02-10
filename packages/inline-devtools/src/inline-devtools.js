@@ -24,7 +24,8 @@ export function inlineDevtools(el, iframe) {
   initDevTools({
     el,
     connect (cb) {
-      inject('./build/backend.js', () => {
+      // inject('./build/backend.js', () => {
+      inject('http://localhost:9090/backend.js', () => {
         cb(new Bridge({
           listen (fn) {
             targetWindow.parent.addEventListener('message', evt => fn(evt.data))
