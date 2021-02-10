@@ -1,7 +1,7 @@
 {
   "name": "@vue-devtools/build-tools",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "main": "src/index.js",
   "dependencies": {
     "buble": "^0.19.0",

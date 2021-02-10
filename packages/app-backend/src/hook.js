@@ -135,6 +135,7 @@ export function installHook (target) {
     }
   })
 
+  target.document.body.style.background = 'red'
   Object.defineProperty(target, '__VUE_DEVTOOLS_GLOBAL_HOOK__', {
     get () {
       return hook
