@@ -69,13 +69,10 @@ let app = new Vue({
  * @param {Object} shell
  *        - connect(bridge => {})
  *        - onReload(reloadFn)
- *        - el // where to mount devtools
  */
 
 export function initDevTools (shell) {
-  console.log('initDevTools')
   initStorage().then(() => {
-    console.log('initApp')
     initApp(shell)
     shell.onReload(() => {
       if (app) {
@@ -92,7 +89,7 @@ export function initDevTools (shell) {
  * Connect then init the app. We need to reconnect on every reload, because a
  * new backend will be injected.
  *
- * @param {Object} shell has connect, onReload, el
+ * @param {Object} shell
  */
 
 function initApp (shell) {
@@ -257,8 +254,7 @@ function initApp (shell) {
             immediate: true
           }
         }
-      // }).$mount('#app')
-      }).$mount(shell.el)
+      }).$mount('#app')
     })
   })
 }

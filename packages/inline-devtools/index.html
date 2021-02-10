@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+iframe {
+  border: 1px solid black;
+}
+    </style>
+  </head>
+  <body>
+    <iframe id="target" frameborder="0" width="500" id="frame" height="500"></iframe>
+    <div id="app"></div>
+
+    <script type="module">
+      import * as D from './build/inlineDevtools.js'
+      const frame = document.getElementById('target')
+      frame.onload = () => {
+        window.inlineDevtools.inlineDevtools('#app', frame)
+      }
+      target.src = 'target.html'
+    </script>
+  </body>
+</html>
