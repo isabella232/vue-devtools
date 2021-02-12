@@ -1,5 +1,5 @@
 {
-  "name": "vue-inline-devtools",
+  "name": "vue-devtools-inline",
   "version": "0.0.0",
   "main": "./build/main.js",
   "dependencies": {
